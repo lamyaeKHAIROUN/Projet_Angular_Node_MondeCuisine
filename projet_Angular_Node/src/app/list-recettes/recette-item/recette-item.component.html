@@ -1,0 +1,22 @@
+<div class="card mb-4 box-shadow" *ngFor="let recetteItem of recettesItem">
+  <div class="div-fit-img">
+    <img [src]="recetteItem.image"  class="bd-placeholder-img card-img-top">
+  </div>
+  <div class="card-body">
+    <h1>{{recetteItem.prix| currency: 'EUR'}}</h1>
+    <h2 class="card-text">{{recetteItem.nom}}</h2>
+    <hr>
+    <div class="">
+      <p class="card-text" >
+        <strong>Description</strong>
+      </p>
+      <p class="card-text">{{recetteItem.description}}</p>
+      <hr>
+      <strong>Fabricant</strong>
+      <p class="card-text">{{recetteItem.pseudo}}</p>
+      <hr>
+      <strong>Référence</strong>
+      <p class="card-text">{{recetteItem.modeCuisson}}</p>
+    </div>
+  </div>
+</div>

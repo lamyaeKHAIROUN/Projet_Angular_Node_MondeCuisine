@@ -1,0 +1,32 @@
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+
+        <li> <a class="navbar-brand smoothie" routerLink="/deco" id="monde"> <i class="fa fa-utensils me-3" ></i> MONDE  <span class="theme-accent-color">CUISINE</span></a></li>
+    </ul>
+    <ul class ="navbar-nav">
+    <li>
+        
+
+        
+        
+        
+        </ul>
+        <ul *ngIf="!(user|async)" class="navbar-nav">
+        <li class="nav-item">
+            <a class="navbar-brand smoothie" routerLink="/user/connexion">Se connecter</a>
+          </li>  
+
+    </ul>
+    <ul *ngIf="user|async" class="navbar-nav">
+         
+            <li class="nav-item">
+          <a class="nav-link active" style="font-size: 18px" (click)="deconnexion()">Déconnexion de {{nom}} </a>
+        </li>
+        
+    </ul>
+  </div>
+
+</nav>
+
+             

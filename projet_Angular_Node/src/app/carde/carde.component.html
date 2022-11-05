@@ -1,0 +1,38 @@
+<div class="container-sm  bg-dark ">
+  <div class="container my-2 py-5">
+    
+        <div class="form-inline my-2 my-lg-O">
+         <div class="text-center text-lg-start" >
+           <h1 class="text-white animated"> Détaille de notre recette :  </h1>
+            </div>
+             
+        <div class="card center-block" style="width:60rem;margin-bottom:2px" *ngFor="let recette of recettesItem; let i = index;trackByIdx"> 
+<img class="card-img-top" src="{{recette['image']}}" alt="Card image cap">
+              <div class="card-body" >
+                 
+                  <h2 class="card-title" style="text-align:center"> {{recette['nom']}}</h2>
+                  <p class="card-text">{{recette['description']}}
+                 </p>
+                         <strong  style="text-align:left"> Pseudo du personne qui a proposé la recette : </strong> {{recette['pseudo']}}
+                  <br>       
+
+                  <strong style="text-align:left"> Mode de cuisson : </strong> {{recette['modeCuisson']}}
+                  <br>
+                  <strong style="text-align:right"> Niveau de difficulté : </strong> {{recette['niveau difficulté']}}
+                  <br>
+                  
+               <strong style="text-align:left" class="bi bi-people-fill"> Nombre de personnes: </strong> {{recette['nbrPersonnes']}}
+               <br>
+               <strong> Ingredients nécessaire: </strong>
+               <div *ngFor="let ingre of recette.ingredients"> - {{ingre.nom}} --> {{ingre.qte}}</div>
+                  
+                 <strong> Les étapes de la recette: </strong>
+               <div *ngFor="let etape of recette.Etapes"> - {{etape.nom}} </div>
+              
+                
+         </div>
+                    </div>
+                
+            </div>
+          </div>
+        </div>

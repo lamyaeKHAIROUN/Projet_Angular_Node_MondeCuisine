@@ -1,0 +1,56 @@
+<div class="container-sm  bg-dark ">
+  <div class="container my-2 py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-9 text-center text-lg-start">
+        <div class="form-inline my-2 my-lg-O">
+         <div class="text-center text-lg-start" >
+           <h1 class="text-white animated"> Découvrer nos reccettes </h1>
+            </div>
+              <h4 class="text-white animated " style="text-align:center"> Effectuer votre recherche selon vos différente critière : </h4>
+               <div class="row"> 
+                 <div class="col order-2">
+    <input  type="search" name="nom" [(ngModel)]="nom" (ngModelChange)="SearchNom()" placeholder="Par nom de la recette" (ngModelOptions)="{standalone:true}" aria-label="Search">
+    </div>
+<div class="col order-1">
+    <input   type="search" name="pseudo" [(ngModel)]="pseudo" (ngModelChange)="SearchPseudo()" placeholder="Par pseudo" (ngModelOptions)="{standalone:true}" aria-label="Search">
+   
+    </div>
+
+    
+ <div class="col order-3">
+    <input   type="search" name="modeCuisson" [(ngModel)]="modeCuisson" (ngModelChange)="Search()" placeholder="Par mode de cuisson" (ngModelOptions)="{standalone:true}" aria-label="Search">
+   
+    </div>
+    <div class="col order-4">
+    <input   type="search" name="nvDiff" [(ngModel)]="nvDiff" (ngModelChange)="SearchDiff()" placeholder="Par niveau difficulté" (ngModelOptions)="{standalone:true}" aria-label="Search">
+   
+    </div>
+
+
+
+
+
+
+    
+    </div>
+    
+    </div>
+        <div class="card center-block" style="width:60rem;margin-bottom:2px;align-items:center;justify-content: center;" *ngFor="let recette of recettes; let i = index;trackByIdx"> 
+<img class="card-img-top" src="{{recette['image']}}" alt="Card image cap">
+              <div class="card-body" >
+                 
+                  <h2 class="card-title"> {{recette['nom']}}</h2>
+                  
+                 <p class="card-text">{{recette['description']}}
+                 </p>
+              
+   <div *ngIf="user|async" >
+    
+              <a  class="btn btn-danger" (click)="showDetailles(recette)" > Détailles </a>
+         </div>
+         </div>
+    <!-- Fin de toutes les cartes -->
+                    </div>
+                </div>
+              </div>
+            </div>

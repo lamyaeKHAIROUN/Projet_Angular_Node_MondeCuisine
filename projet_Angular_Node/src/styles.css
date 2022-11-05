@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+color:black;
+background-color:white;
+background-image:url(/assets/2.jpg);
+background-size: cover ;
+font-family: 'Numans', sans-serif;
+background-repeat: no-repeat;
+height: 100%;
+
+}
